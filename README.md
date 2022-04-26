@@ -134,6 +134,23 @@ If `mqtt/private_path` parameter is set, leading `~/` in MQTT topic path will be
 serializer: json:dumps
 deserializer: json:loads
 ```
+To convert ros messages to json use this code:
+```python
+import json
+import yaml
+
+def msg2json(msg):
+   ''' Convert a ROS message to JSON format'''
+   y = yaml.load(str(msg))
+   return json.dumps(y,indent=4)
+
+if __name__ == "__main__":
+    from geometry_msgs.msg import PoseStamped
+    P = PoseStamped()
+    print msg2json(P)
+```
+
+
 
 ### bridges
 
