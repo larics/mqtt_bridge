@@ -1,0 +1,22 @@
+{
+  "twist": {
+    "linear": {
+      "y": 0,
+      "x": 0.3,
+      "z": 0
+    },
+    "angular": {
+      "y": 0,
+      "x": 0,
+      "z": 0
+    }
+  },
+  "header": {
+    "stamp": {
+      "secs": 0,
+      "nsecs": 0
+    },
+    "frame_id": "world",
+    "seq": 0
+  }
+}

@@ -1,0 +1,24 @@
+mqtt:
+  client:
+    protocol: 4      # MQTTv311
+  connection:
+    host: 172.16.0.139
+    port: 1883
+    keepalive: 60
+  private_path: device/001
+serializer: json:dumps #msgpack:dumps
+deserializer: json:loads #msgpack:loads
+bridge:
+  # ping pong
+  #- factory: mqtt_bridge.bridge:RosToMqttBridge
+  #  msg_type: geometry_msgs.msg:PoseStamped
+  #  topic_from: /uav/pose
+  #  topic_to: mqtt/uav/pose
+  - factory: mqtt_bridge.bridge:MqttToRosBridge
+    msg_type: geometry_msgs.msg:TwistStamped
+    topic_from: mqtt/twist
+    topic_to: /twist
+  - factory: mqtt_bridge.bridge:MqttToRosBridge
+    msg_type: geometry_msgs.msg:PoseStamped
+    topic_from: mqtt/uav/pose
+    topic_to: /uav/pose
