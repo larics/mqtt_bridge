@@ -1,0 +1,22 @@
+# Requirements for Ubuntu 20.04 / Python 3.8.10
+# thanks to rospypi project, we can install ros packages in pure python
+# See: https://github.com/rospypi/simple
+--extra-index-url https://rospypi.github.io/simple/
+catkin-pkg
+geometry-msgs
+inject==4.3.1
+mock
+msgpack
+paho-mqtt==1.6.1
+pymongo
+pytest
+pyyaml
+git+https://github.com/RobotWebTools/rosbridge_suite.git@ros1#subdirectory=rosbridge_library
+rosgraph
+rosgraph-msgs
+roslib
+rosmsg
+rospy<1.15  # 1.15 is for python3
+rostest
+sensor-msgs
+std-msgs
